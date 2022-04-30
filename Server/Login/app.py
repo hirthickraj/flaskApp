@@ -27,7 +27,7 @@ def register():
             msg = 'Please fill out the form !'
         else:
             print('Inserting to DB')
-            db.insert_one({'firstname':firstName,'lastname':lastName,'number':number})
+            db.insert({'firstname':firstName,'lastname':lastName,'number':number})
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
