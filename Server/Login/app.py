@@ -19,15 +19,15 @@ def register():
         print(firstName,lastName,number)
         if len(firstName)<3:
             msg = 'Atlest 3 Characters requied'
-        elif len(lastName)<3:
+        if len(lastName)<3:
             msg='Atleast 3 Characters required'
-        elif len(number)!=10:
+        if len(number)!=10:
             msg= 'Invalid Mobile Number'
-        elif not firstName or not lastName or not number:
+        if not firstName or not lastName or not number:
             msg = 'Please fill out the form !'
-        else:
+        if len(msg)!=0:
             print('Inserting to DB')
-            db.insert({'firstname':firstName,'lastname':lastName,'number':number})
+            db.insert_one({'firstname':firstName,'lastname':lastName,'number':number})
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
