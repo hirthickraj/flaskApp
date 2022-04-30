@@ -5,7 +5,7 @@ import re
   
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb+srv://instaboy:instaboy@instaboy.hh1km.mongodb.net/userdatabase?retryWrites=true&w=majority&ssl=true&ssl.CERT_NONE=true"
+app.config["MONGO_URI"] = "mongodb+srv://instaboy:instaboy@instaboy.hh1km.mongodb.net/userdatabase?retryWrites=true&w=majority&ssl=true&tlsAllowInvalidCertificates=true"
 mongo = PyMongo(app)
 db = mongo.db.userdata
 
